@@ -30,3 +30,7 @@ redirect_interna_pemanente_index:
 redirect_externa_index:
     path: /redirectexterna/index
     defaults: {_controller: AppBundle:Redirect:externalRedirect}
+
+get_temp:
+    path: /temperature/{id}
+    defaults: {_controller: AppBundle:Temperature:get}
