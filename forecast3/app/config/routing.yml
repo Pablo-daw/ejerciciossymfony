@@ -49,3 +49,7 @@ location_index:
     path: /location/index
     defaults: {_controller: AppBundle:Location:index}
 
+location_Json_index:
+    path: /location/indexjson
+    defaults: {_controller: AppBundle:Location:indexJson}
+
