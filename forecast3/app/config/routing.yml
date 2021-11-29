@@ -1,3 +1,16 @@
+######### CalculatorController #########
+
+calculator1_edad:
+    path: /calculator/{age}
+    defaults: {_controller: AppBundle:Calculator:index}
+
+calculator2_edad:
+    path: /calculator2/{age}
+    defaults: {_controller: AppBundle:Calculator2:index}
+
+
+######### ForecastController #########
+
 forecast_simple:
     path: /forecast3/index
     defaults: {_controller: AppBundle:Forecast:index}
@@ -6,7 +19,6 @@ forecast_param:
     path: /forecast3/{weather}
     defaults: {_controller: AppBundle:Forecast:indexParam, weather: nublado}
 
-
 forecast_2_param:
     path: /forecast3/{weather}/{temperature}
     defaults: {_controller: AppBundle:Forecast:index2Params, weather: nublado, temperature: 27}
@@ -14,6 +26,9 @@ forecast_2_param:
 forecast_request_param:
     path: /forecast3/indexRequest/{weather}/{temperature}
     defaults: {_controller: AppBundle:Forecast:indexRequest, weather: soleado, temperature: 15}
+
+
+######### RedirectController #########
 
 redirect_index:
     path: /redirect/index
@@ -31,6 +46,9 @@ redirect_externa_index:
     path: /redirectexterna/index
     defaults: {_controller: AppBundle:Redirect:externalRedirect}
 
+    
+######### TemperatureController #########
+
 get_temp:
     path: /temperature/{id}
     defaults: {_controller: AppBundle:Temperature:get}
@@ -45,6 +63,9 @@ getall_temp:
     path: /temperature/getall
     defaults: {_controller: AppBundle:Temperature:getAll}
 
+
+######### LocationController #########
+
 location_index:
     path: /location/index
     defaults: {_controller: AppBundle:Location:index}
@@ -53,3 +74,63 @@ location_Json_index:
     path: /location/indexjson
     defaults: {_controller: AppBundle:Location:indexJson}
 
+
+######### View/standalone #########
+standalone:
+    path: /standalone
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: standalone/index.html.twig
+        maxAge: 86400
+        sharedAge: 86400
+
+
+######### ForwardController #########
+forward_index:
+    path: /forward
+    defaults: {_controller: AppBundle:Forward:index}
+
+
+######### GreetController #########
+
+saludo:
+    path: /greet/index
+    defaults: {_controller: AppBundle:Greet:index}
+
+saludo_completo:
+    path: /greet/{something}
+    defaults: {_controller: AppBundle:Greet:greetSomething}
+
+saludo_vista:
+    path: /greetview/{something}
+    defaults: {_controller: AppBundle:Greet:greetView}
+
+
+#########  NumberController #########
+
+calculo_suma:
+    path: /add/{num1}/{num2}
+    defaults: {_controller: AppBundle:Number:index}
+
+calculo_resta:
+    path: /sub/{num1}/{num2}
+    defaults: {_controller: AppBundle:Number:index2}
+
+calculo_multiplicacion:
+    path: /mul/{num1}/{num2}
+    defaults: {_controller: AppBundle:Number:index3}
+
+calculo_division:
+    path: /div/{num1}/{num2}
+    defaults: {_controller: AppBundle:Number:index4}
+
+calculo_todo:
+    path: /all/{num1}/{num2}
+    defaults: {_controller: AppBundle:Number:all}
+
+
+#########  SessionController #########
+
+sesion:
+    path: /login/{name}/{pass}
+    defaults: {_controller: AppBundle:Session:index}
